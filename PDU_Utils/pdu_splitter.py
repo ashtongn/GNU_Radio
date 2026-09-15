@@ -16,12 +16,12 @@ from gnuradio import gr
 import pmt
 import sys
 
-class blk(gr.sync_block):  # other base classes are basic_block, decim_block, interp_block
+class blk(gr.split_block):  # other base classes are basic_block, decim_block, interp_block
     """Embedded Python Block example - a simple multiply const"""
 
     def __init__(self, key = 'PDU', value = 1.0):  # only default arguments here
         """arguments to this function show up as parameters in GRC"""
-        gr.sync_block.__init__(
+        gr.split_block.__init__(
             self,
             name='PDU Filter',   # will show up in GRC
             in_sig=None,
