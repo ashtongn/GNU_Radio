@@ -13,11 +13,11 @@ import numpy as np
 from gnuradio import gr
 import sys
 
-class blk(gr.combine_block):  # other base classes are basic_block, decim_block, interp_block
+class blk(gr.sync_block):  # other base classes are basic_block, decim_block, interp_block
 
     def __init__(self):  # only default arguments here
         """arguments to this function show up as parameters in GRC"""
-        gr.combine_block.__init__(
+        gr.sync_block.__init__(
             self,
             name='Float To Complex',   # will show up in GRC
             in_sig=[np.float32, np.float32], # [0]=real (I), [1]=imag (Q)
